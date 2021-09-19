@@ -5,8 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.*
-import androidx.core.content.ContextCompat
-import androidx.core.content.ContextCompat.startActivity
 import com.bumptech.glide.Glide
 import retrofit2.Call
 import retrofit2.Callback
@@ -48,8 +46,8 @@ class MainActivity : AppCompatActivity() {
 
                     response.body()?.let {
                         Log.i("Usuario", it.toString())
-                        Toast.makeText(this@MainActivity, it.toString(), Toast.LENGTH_LONG)
-                            .show()
+//                        Toast.makeText(this@MainActivity, it.toString(), Toast.LENGTH_LONG)
+//                            .show()
                         usuario = it.descricaoEmail
                         cnpj = it.cnpjOuCpf.toString()
                         enviarDashBoard()

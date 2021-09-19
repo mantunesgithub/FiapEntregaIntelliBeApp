@@ -14,10 +14,10 @@
         android:theme="@style/Theme.IntelliBe"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".lista_formulario.ListaFormularioActivity"
+            android:name=".EnviarListaFormulario"
             android:exported="true" />
         <activity
-            android:name=".lista.formulario.ListaCategoriaActivity"
+            android:name=".activity.RecyclerViewFormulario"
             android:exported="true" />
         <activity
             android:name=".EnviarDashBoard"

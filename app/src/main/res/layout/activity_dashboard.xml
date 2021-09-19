@@ -6,62 +6,111 @@
     android:layout_height="match_parent"
     android:layout_marginLeft="20dp"
     android:layout_marginRight="20dp"
+    android:layout_marginTop="10dp"
     tools:context=".EnviarDashBoard">
 
     <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_gravity="center"/>
+        android:id="@+id/imageViewFoto"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginStart="0dp"
+        android:scaleType="fitStart"
+        app:srcCompat="@drawable/foto_marcio"/>
 
     <TextView
         android:id="@+id/txv_bem_vindo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
         android:text="Seja bem Vindo(a)!"
+        android:textSize="25sp"
         android:textStyle="bold"
-        android:layout_marginTop="30dp"
-        android:layout_marginStart="30dp"
-        android:textSize="30sp"
-        app:layout_constraintTop_toBottomOf="@+id/imageView1"
-        app:layout_constraintStart_toStartOf="@+id/imageView1"/>
+        app:layout_constraintStart_toStartOf="@+id/imageViewFoto"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewFoto" />
+
+    <TextView
+        android:id="@+id/txv_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="E-mail:"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="@+id/txv_bem_vindo"
+        app:layout_constraintTop_toBottomOf="@+id/txv_bem_vindo" />
 
     <TextView
         android:id="@+id/txv_usuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@id/txv_bem_vindo"
-        app:layout_constraintStart_toStartOf="@id/txv_bem_vindo"
-        android:layout_marginTop="22dp"/>
+        android:layout_marginTop="0dp"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/txv_email"
+        app:layout_constraintTop_toBottomOf="@id/txv_email" />
 
+    <TextView
+        android:id="@+id/txv_cnpttx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Cnpj: "
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="@+id/txv_usuario"
+        app:layout_constraintTop_toBottomOf="@+id/txv_usuario" />
     <TextView
         android:id="@+id/txv_cnpj"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@+id/txv_usuario"
-        app:layout_constraintStart_toStartOf="@+id/txv_usuario"
-        android:layout_marginTop="22dp"/>
+        android:layout_marginTop="0dp"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/txv_cnpttx"
+        app:layout_constraintTop_toBottomOf="@+id/txv_cnpttx" />
 
     <TextView
         android:id="@+id/txv_teste_realiz"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="25sp"
-        android:text="Total de Testes Realizados:"
-        app:layout_constraintTop_toBottomOf="@+id/txv_cnpj"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="52dp"
+        android:text="Testes Realizados no Mês"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/txv_cnpj"
-        android:layout_marginTop="32dp"/>
+        app:layout_constraintTop_toBottomOf="@+id/txv_cnpj" />
 
     <TextView
         android:id="@+id/txv_total_teste_realiz"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="25sp"
+        android:textSize="15sp"
         app:layout_constraintTop_toBottomOf="@id/txv_teste_realiz"
         app:layout_constraintStart_toStartOf="@id/txv_teste_realiz"
         android:layout_marginTop="22dp"
         app:layout_constraintHorizontal_bias="0.5"/>
+
+    <ImageView
+        android:id="@+id/imageViewForm"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="54dp"
+        android:scaleType="fitStart"
+        app:srcCompat="@drawable/formulario_image"
+        tools:layout_editor_absoluteX="88dp"
+        tools:layout_editor_absoluteY="394dp"
+        app:layout_constraintTop_toBottomOf="@+id/txv_total_teste_realiz"
+        app:layout_constraintStart_toStartOf="@+id/txv_total_teste_realiz"/>
+
+    <Button
+        android:id="@+id/btn_formulario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="Formulários"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewForm"
+        app:layout_constraintStart_toStartOf="@+id/imageViewForm"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewForm"
+        app:layout_constraintVertical_bias="0.05"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
