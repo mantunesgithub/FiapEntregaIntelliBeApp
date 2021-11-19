@@ -23,11 +23,19 @@ class MainActivity : AppCompatActivity() {
         "https://play-lh.googleusercontent.com/Qf_DfctF26j2yXlqoKxJeSP1rUdzJVIrd_Jq_wrZMnl4hQlkJ5PDO5RCM_MIXMY-AkQ=s180-rw"
         Glide.with(this).load(i1).into(imageView1)
 
-        val login: EditText = findViewById(R.id.edt_email)
+        val login: EditText = findViewById(R.id.edt_email_cad)
         val senha: EditText = findViewById(R.id.edt_senha)
         val buttonLogin: Button = findViewById(R.id.btn_login)
-        var msg: TextView = findViewById(R.id.txt_msg)
+        val btnCadastro: Button = findViewById(R.id.btn_cadastro)
+        val msg: TextView = findViewById(R.id.txt_msg)
 
+        //-- Ao clicar no botão Cadastro Novo
+        //-- Chamar o backend Activity para cadastrar usuario novo
+        //-------------------------------------------------------------------
+        btnCadastro.setOnClickListener {
+            val intent = Intent(this, CadastroNovo::class.java)
+            startActivity(intent)
+        }
 
         //-- Ao clicar no botão Login
         //-- Chamar o backend passando login e senha para validação da senha
@@ -35,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         buttonLogin.setOnClickListener {
             msg.text = " "
 
-            println("==> Login = " + login.text.toString() + " senha = " + senha.text.toString())
+//            println("==> Login = " + login.text.toString() + " senha = " + senha.text.toString())
 
             val call = RetrofitFactory().retrofitService().getUSUARIO(
                 login.text.toString(), senha.text.toString())
@@ -61,7 +69,7 @@ class MainActivity : AppCompatActivity() {
                 override fun onFailure(call: Call<Usuario>?, t: Throwable?) {
                     t?.message?.let { it -> Log.e("Erro", it)
                     }
-                    msg.text = login.text.toString() + " Não Efetuou LOGIN !!"
+                    msg.text = login.text.toString()
                     if (t != null) {
                         Toast.makeText(applicationContext,"Erro : +"+t.message,Toast.LENGTH_LONG)
                             .show()

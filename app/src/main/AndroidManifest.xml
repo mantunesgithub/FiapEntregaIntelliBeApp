@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.fiap.intellibe">
 
+    <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
@@ -13,6 +14,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IntelliBe"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".CadastroNovo"
+            android:exported="true" />
+        <activity
+            android:name=".TelaRespostaActivity"
+            android:exported="true" />
         <activity
             android:name=".EnviarListaFormulario"
             android:exported="true" />

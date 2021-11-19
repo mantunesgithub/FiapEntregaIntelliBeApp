@@ -105,12 +105,24 @@
         android:id="@+id/btn_formulario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="56dp"
         android:text="Formulários"
-        app:layout_constraintHorizontal_bias="0.5"
+        android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="@+id/imageViewForm"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/imageViewForm"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewForm"
-        app:layout_constraintVertical_bias="0.05"/>
+        app:layout_constraintTop_toBottomOf="@+id/imageViewForm" />
 
+    <Button
+        android:id="@+id/btn_notificacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="Notificações"
+        android:textAllCaps="false"
+        android:onClick="gerarNotificacao"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewForm"
+        app:layout_constraintHorizontal_bias="0.682"
+        app:layout_constraintStart_toStartOf="@+id/imageViewForm"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewForm" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">IntelliBe</string>
+    <string name="chennel_name">Notificação Local</string>
+    <string name="channel_description">Notificacao Local</string>
 </resources>

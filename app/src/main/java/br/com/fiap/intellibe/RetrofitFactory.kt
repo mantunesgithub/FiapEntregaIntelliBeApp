@@ -26,4 +26,5 @@ class RetrofitFactory {
     fun retrofitService2(): RetrofitService {
         return retrofitFactory2.create(RetrofitService::class.java)
     }
+
 }

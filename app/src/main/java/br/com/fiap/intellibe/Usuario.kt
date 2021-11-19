@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 data class Usuario(
 
-    @SerializedName("idUsuario")        val idUsuario: Long,
+    @SerializedName("idUsuario")        val idUsuario: Long?,
     @SerializedName("tipoUsuario")      val tipoUsuario: String,
     @SerializedName("cnpjOuCpf")        val cnpjOuCpf: Long ,
     @SerializedName("nomeUsuario")      val nomeUsuario: String ,
