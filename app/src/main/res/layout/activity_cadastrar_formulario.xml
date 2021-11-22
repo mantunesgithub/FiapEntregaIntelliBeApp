@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/txv_cabec_form"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CadastrarFormulario">
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Cadastrar Formulário"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/edt_nome_form"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <EditText
+        android:id="@+id/edt_nome_form"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
+        android:drawableLeft="@drawable/ic_baseline_format_align_justify_24"
+        android:drawablePadding="6dp"
+        android:ems="10"
+        android:hint="Nome do formulário"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/edt_descr_vaga_form"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <EditText
+        android:id="@+id/edt_descr_vaga_form"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
+        android:drawableLeft="@drawable/ic_baseline_description_24"
+        android:drawablePadding="6dp"
+        android:ems="10"
+        android:hint="Descrição da vaga"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/edt_vlnota_min_form"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_nome_form" />
+
+    <EditText
+        android:id="@+id/edt_vlnota_min_form"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
+        android:drawableLeft="@drawable/ic_baseline_approval_24"
+        android:drawablePadding="6dp"
+        android:ems="10"
+        android:hint="Valor da nota mínima"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/edt_dtinicio_test_form"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_descr_vaga_form" />
+
+    <EditText
+        android:id="@+id/edt_dtinicio_test_form"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
+        android:drawableLeft="@drawable/ic_baseline_edit_calendar_24"
+        android:drawablePadding="6dp"
+        android:ems="10"
+        android:hint="Data início do teste"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/edt_dtfinal_test_form"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_vlnota_min_form" />
+
+    <EditText
+        android:id="@+id/edt_dtfinal_test_form"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
+        android:drawableLeft="@drawable/ic_baseline_edit_calendar_24"
+        android:drawablePadding="6dp"
+        android:ems="10"
+        android:hint="Data final do teste"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/btn_cadastrar_form"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_dtinicio_test_form" />
+
+    <Button
+        android:id="@+id/btn_cadastrar_form"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:text="Cadastrar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_dtfinal_test_form" />
+</androidx.constraintlayout.widget.ConstraintLayout>

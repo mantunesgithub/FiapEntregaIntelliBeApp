@@ -18,4 +18,20 @@ class RestApiService {
             }
         )
     }
+
+    fun addForm(formData: Formulario, onResult: (Formulario?) -> Unit){
+        val retrofit = ServiceBuilder.buildService(RestApi::class.java)
+        retrofit.addForm(formData).enqueue(
+            object : Callback<Formulario> {
+                override fun onFailure(call: Call<Formulario>, t: Throwable) {
+                    onResult(null)
+                }
+                override fun onResponse( call: Call<Formulario>, response: Response<Formulario>) {
+                    val addedUser = response.body()
+                    onResult(addedUser)
+                }
+            }
+        )
+    }
+
 }

@@ -1,23 +1,17 @@
 package br.com.fiap.intellibe
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class CadastroNovo : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cadastro_novo)
 
-        var tipopesUsu: EditText = findViewById(R.id.edt_tipopes_cad)
+        var tipopesUsu: EditText = findViewById(R.id.edt_pj_pf)
         var nomeUsu: EditText = findViewById(R.id.edt_nome_cad)
         var cnpjOuCpfUsu: EditText = findViewById(R.id.edt_cnpj_cpf_cad)
         var emailUsu: EditText = findViewById(R.id.edt_email_cad)

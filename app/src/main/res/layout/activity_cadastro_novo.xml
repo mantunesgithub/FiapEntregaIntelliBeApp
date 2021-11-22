@@ -14,7 +14,7 @@
         android:text="Cadastrar Usuários Novos"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/edt_tipopes_cad"
+        app:layout_constraintBottom_toTopOf="@+id/edt_pj_pf"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -31,11 +31,11 @@
         android:ems="10"
         android:hint="Nome"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/edt_cnpj_cpf_cad"
+        app:layout_constraintBottom_toTopOf="@+id/edt_pj_pf"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_tipopes_cad" />
+        app:layout_constraintTop_toBottomOf="@+id/edt_cnpj_cpf_cad" />
 
     <Button
         android:id="@+id/btn_cadastrar_usuario"
@@ -96,7 +96,7 @@
         app:layout_constraintTop_toBottomOf="@+id/edt_nome_cad" />
 
     <EditText
-        android:id="@+id/edt_tipopes_cad"
+        android:id="@+id/edt_pj_pf"
         android:layout_width="0dp"
         android:layout_height="43dp"
         android:layout_marginStart="32dp"

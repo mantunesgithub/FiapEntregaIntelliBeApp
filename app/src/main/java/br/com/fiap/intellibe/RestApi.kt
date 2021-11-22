@@ -9,4 +9,8 @@ interface RestApi {
     @Headers("Content-Type: application/json")
     @POST("/usuario")
     fun addUser(@Body userData: Usuario): Call<Usuario>
+
+    @Headers("Content-Type: application/json")
+    @POST("/form")
+    fun addForm(@Body formData: Formulario): Call<Formulario>
 }

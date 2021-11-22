@@ -37,16 +37,26 @@ class EnviarDashBoard : AppCompatActivity() {
         var usuario: TextView = findViewById(R.id.txv_usuario)
         var totalTesteRealiz: TextView = findViewById(R.id.txv_total_teste_realiz)
 
-        val btn_formulario: Button = findViewById(R.id.btn_formulario)
+        val btnListarformulario: Button = findViewById(R.id.btn_listar_form)
+        val btnCadastrarformulario: Button = findViewById(R.id.btn_cadastrar_form)
+        val btnExcluirformulario: Button = findViewById(R.id.btn_excluir_form)
 
         usuario.text = getIntent().getStringExtra("chaveUsuario")
         cnpj.text =  getIntent().getStringExtra("chaveCnpj")
 
-        // Chamar formulario
-
-        btn_formulario.setOnClickListener {
-            EnviarListaFormulario()
+        // Listar formulario
+        btnListarformulario.setOnClickListener {
+            enviarListaFormulario()
         }
+        // Cadastrar formulario
+        btnCadastrarformulario.setOnClickListener {
+            cadastrarFormulario()
+        }
+        // Excluir formulario
+        btnListarformulario.setOnClickListener {
+            excluirFormulario()
+        }
+
 
         val call = RetrofitFactory().retrofitService2().getFORMULARIO(
             cnpj.text.toString())
@@ -78,7 +88,27 @@ class EnviarDashBoard : AppCompatActivity() {
         })
     }
 
-    private fun EnviarListaFormulario() {
+    private fun enviarListaFormulario() {
+        var cnpjDoUsuario : TextView = findViewById(R.id.txv_cnpj)
+        var nomeUsuario: TextView = findViewById(R.id.txv_usuario)
+
+        val i = Intent(this, EnviarListaFormulario::class.java)
+        i.putExtra("chvCnpjDoUsuario",  cnpjDoUsuario.text.toString())
+        i.putExtra("chvNomeUsuario", nomeUsuario.text.toString())
+        startActivity(i)
+        finish()
+    }
+    private fun cadastrarFormulario() {
+        var cnpjDoUsuario : TextView = findViewById(R.id.txv_cnpj)
+        var nomeUsuario: TextView = findViewById(R.id.txv_usuario)
+
+        val i = Intent(this, CadastrarFormulario::class.java)
+        i.putExtra("chvCnpjDoUsuario",  cnpjDoUsuario.text.toString())
+        i.putExtra("chvNomeUsuario", nomeUsuario.text.toString())
+        startActivity(i)
+        finish()
+    }
+    private fun excluirFormulario() {
         var cnpjDoUsuario : TextView = findViewById(R.id.txv_cnpj)
         var nomeUsuario: TextView = findViewById(R.id.txv_usuario)
 
