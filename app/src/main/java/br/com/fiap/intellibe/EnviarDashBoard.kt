@@ -53,7 +53,7 @@ class EnviarDashBoard : AppCompatActivity() {
             cadastrarFormulario()
         }
         // Excluir formulario
-        btnListarformulario.setOnClickListener {
+        btnExcluirformulario.setOnClickListener {
             excluirFormulario()
         }
 
@@ -112,12 +112,13 @@ class EnviarDashBoard : AppCompatActivity() {
         var cnpjDoUsuario : TextView = findViewById(R.id.txv_cnpj)
         var nomeUsuario: TextView = findViewById(R.id.txv_usuario)
 
-        val i = Intent(this, EnviarListaFormulario::class.java)
+        val i = Intent(this, ExcluirFormulario::class.java)
         i.putExtra("chvCnpjDoUsuario",  cnpjDoUsuario.text.toString())
         i.putExtra("chvNomeUsuario", nomeUsuario.text.toString())
         startActivity(i)
         finish()
     }
+
 
     fun createNotificationChannel(){
         // Create Notification Channel , but only api 26+ because

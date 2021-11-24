@@ -15,6 +15,9 @@
         android:theme="@style/Theme.IntelliBe"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ExcluirFormulario"
+            android:exported="true" />
+        <activity
             android:name=".CadastrarFormulario"
             android:exported="true" />
         <activity

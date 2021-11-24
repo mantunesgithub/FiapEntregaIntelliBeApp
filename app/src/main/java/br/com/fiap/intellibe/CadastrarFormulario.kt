@@ -14,17 +14,59 @@ class CadastrarFormulario : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cadastrar_formulario)
 
-            var nomeForm: EditText = findViewById(R.id.edt_nome_form)
-            var descrVagaForm: EditText = findViewById(R.id.edt_descr_vaga_form)
-            var vlNotaMinForm: EditText = findViewById(R.id.edt_vlnota_min_form)
-            var dtInicioTesteForm: EditText = findViewById(R.id.edt_dtinicio_test_form)
-            var dtFinalTesteForm: EditText = findViewById(R.id.edt_dtfinal_test_form)
-            val btnCadastrarForm: Button = findViewById(R.id.btn_cadastrar_form)
+        var nomeForm: EditText = findViewById(R.id.edt_nome_form)
+        var descrVagaForm: EditText = findViewById(R.id.edt_descr_vaga_form)
+        var vlNotaMinForm: EditText = findViewById(R.id.edt_vlnota_min_form)
+        var dtInicioTesteForm: EditText = findViewById(R.id.edt_dtinicio_test_form)
+        var dtFinalTesteForm: EditText = findViewById(R.id.edt_dtfinal_test_form)
+        val btnCadastrarForm: Button = findViewById(R.id.btn_cadastrar_form)
 
-            // Cadastrar Formulário
+
+        // Cadastrar Formulário
 
         btnCadastrarForm.setOnClickListener {
-/*            val c1 = Cliente(
+            val nomeFormString: String = nomeForm.getText().toString()
+            val descrVagaString: String = descrVagaForm.getText().toString()
+            val vlNotaMinString: String = vlNotaMinForm.getText().toString()
+            val dtInicioTesteString: String = dtInicioTesteForm.getText().toString()
+            val dtFinalTesteString: String = dtFinalTesteForm.getText().toString()
+
+            var erroValida: String = ""
+            //Validar se os campos foram preenchidos
+            if (nomeFormString.isEmpty()) {
+                erroValida = "E"
+                Toast.makeText(this@CadastrarFormulario, "Preencha nome do formulário!",
+                Toast.LENGTH_SHORT).show()
+            } else {
+                if (descrVagaString.isEmpty()) {
+                    erroValida = "E"
+                    Toast.makeText(this@CadastrarFormulario, "Preencha descrição da vaga!",
+                    Toast.LENGTH_SHORT).show()
+                } else {
+                    if (vlNotaMinString.isEmpty()) {
+                        erroValida = "E"
+                        Toast.makeText(this@CadastrarFormulario, "Preencha valor da nota mínima!",
+                        Toast.LENGTH_SHORT).show()
+                    } else {
+                        if (dtInicioTesteString.isEmpty()) {
+                            erroValida = "E"
+                            Toast.makeText(
+                                this@CadastrarFormulario, "Preencha data inicio!",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        } else {
+                            if (dtFinalTesteString.isEmpty()) {
+                                erroValida = "E"
+                                Toast.makeText(
+                                    this@CadastrarFormulario, "Preencha data final!",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+                        }
+                    }
+                }
+            }
+            val c1 = Cliente(
                 65039846000180L,
                 "PJ",
                 "Consultoria Estefani Ltda",
@@ -38,20 +80,14 @@ class CadastrarFormulario : AppCompatActivity() {
                 "065000123",
                 "(011)2323-7899"
             )
-*/
-            var valueNotaMinima: String = vlNotaMinForm.getText().toString()
-            var finalNotaMinima: Double = valueNotaMinima.toDouble()
+            if (erroValida != "E") {
 
-//            val dateFirst =  dtInicioTesteForm.text.toString()
-//            val firstFormatter = DateTimeFormatter.ofPattern("dd MMM uuuu", Locale.ENGLISH)
-//            val localDate = LocalDate.parse(dateFirst, firstFormatter)
 
-//            val dateSec =  dtInicioTesteForm.text.toString()
-//            val secFormatter = DateTimeFormatter.ofPattern("dd MMM uuuu", Locale.ENGLISH)
-//            val localDate2 = LocalDate.parse(dateSec, secFormatter)
+                var valueNotaMinima = vlNotaMinForm.getText().toString()
+                var finalNotaMinima: Double = valueNotaMinima.toDouble()
 
-            val apiService = RestApiService()
-            val formulario = Formulario(
+                val apiService = RestApiService()
+                val formulario = Formulario(
                     idFormulario = 0L,
                     nomeFormulario = nomeForm.text.toString(),
                     descVaga = descrVagaForm.text.toString(),
@@ -63,14 +99,11 @@ class CadastrarFormulario : AppCompatActivity() {
                     valorNotaMinima = finalNotaMinima,
                     nomePublicoLink = " ",
                     qtQuestoesForm = 10,
-                    dtCriacaoForm = ("2021-11-11"))
-
-//                println("==> Cadastro = Tipo= " + formulario.tipoUsuario + " cnpj = " + formulario.cnpjOuCpf +
-//                        " nome " + formulario.nomeUsuario +
-//                        " email = " + formulario.descricaoEmail  + " senha " + formulario.senha + " id " + formulario.idUsuario )
+                    dtCriacaoForm = ("2021-11-11")
+                )
 
                 apiService.addForm(formulario) {
-                    if (it?.idFormulario == null) {
+                    if (it?.idFormulario != null) {
                         Toast.makeText(
                             this@CadastrarFormulario, "Formulario Cadastrado com Sucesso !",
                             Toast.LENGTH_LONG
@@ -84,5 +117,5 @@ class CadastrarFormulario : AppCompatActivity() {
                 }
             }
         }
-
     }
+}

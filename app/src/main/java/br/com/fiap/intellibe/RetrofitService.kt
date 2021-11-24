@@ -1,11 +1,6 @@
 package br.com.fiap.intellibe
 import retrofit2.Call
-import retrofit2.http.GET
-import retrofit2.http.Path
-
-import retrofit2.http.Body
-import retrofit2.http.Headers
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface RetrofitService {
 
@@ -18,6 +13,7 @@ interface RetrofitService {
     @GET("{cpfOuCnpj}")
     fun getFORMULARIO (@Path("cpfOuCnpj") cpfOuCnpj: String) : Call<List<Formulario>>
 
-
+    @DELETE("{idFormulario}")
+    fun deleteFORMULARIO (@Path("idFormulario") idFormulario: String) : Call<Unit>
 
 }
